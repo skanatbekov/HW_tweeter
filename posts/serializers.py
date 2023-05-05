@@ -5,6 +5,7 @@ from .models import Tweet, TweetLike, Comment, TweetImage, CommentLike
 
 
 class TweetImageListSerializer(serializers.ListSerializer):
+
     def create(self, validated_data):
         result = []
         for data in validated_data:
@@ -31,6 +32,7 @@ class TweetSerializer(serializers.ModelSerializer):
 
 class CommentSerializer(serializers.ModelSerializer):
     marks = serializers.ReadOnlyField(source='get_mark')
+
     class Meta:
         model = Comment
         fields = '__all__'

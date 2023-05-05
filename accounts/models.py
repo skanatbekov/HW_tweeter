@@ -9,3 +9,12 @@ class User(AbstractUser):
         return self.username
 
 
+class Table(models.Model):
+    small_serial = models.SmallAutoField(primary_key=True)
+    # serial = models.AutoField()
+    # big_serial = models.BigAutoField()
+    small_integer = models.SmallIntegerField()
+    big_integer = models.BigIntegerField()
+    numeric = models.FloatField()
+
+
